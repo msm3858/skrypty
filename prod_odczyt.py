@@ -245,7 +245,7 @@ class Pozostale:
 			return numer
 	def print_gotowe_prefiksy(self):
 		print (self.gotowe_prefiksy)
-pool = ThreadPool(4) 
+pool = ThreadPool(16) 
 pozostale = Pozostale(gotowe_prefiksy)
 print("Rozpoczynam szukanie wielowątkowe")
 pozostale_numery = pool.map(pozostale.numer_w_prefiksach,wszystkie_numery)
