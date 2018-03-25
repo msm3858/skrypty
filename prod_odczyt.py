@@ -218,29 +218,28 @@ logplik.write(tekst)
 class Pozostale:
 	def __init__(self,gotowe_prefiksy):
 		self.gotowe_prefiksy = gotowe_prefiksy
-	def numer_w_pieciu(self,numer):
-		if numer[-4] in self.gotowe_prefiksy:
-			return True
-		else:
-			return False
-	def numer_w_szesciu(self,numer):
-		if numer[-3] in self.gotowe_prefiksy:
-			return True
-		else:
-			return False
-	def numer_w_siedmiu(self,numer):
-		if numer[-2] in self.gotowe_prefiksy:
-			return True
-		else:
-			return False
-	def numer_w_osmiu(self,numer):
-		if numer[-1] in gotowe_prefiksy:
-			return True
-		else:
-			return False
+		self.piatki = []
+		self.szostki = []
+		self.siodemki = []
+		self.osemki = []
+		for pref in self.gotowe_prefiksy:
+			if len(pref) == 14:
+				self.piatki.append(pref)
+			elif len(pref) == 15:
+				self.szostki.append(pref)
+			elif len(pref) == 16:
+				self.siodemki.append(pref)
+			elif len(pref) == 17:
+				self.osemki.append(pref)
 	def numer_w_prefiksach(self,numer):
-		if numer[:-4] in self.gotowe_prefiksy or numer[:-3] in self.gotowe_prefiksy or numer[:-2] in self.gotowe_prefiksy or numer[:-1] in self.gotowe_prefiksy:
+		if numer[:-4] in self.piatki:
 			pass
+		elif numer[:-3] in self.szostki:
+			pass
+		elif numer[:-2] in self.siodemki:
+			pass
+		elif numer[:-1] in self.osemki:
+			pass 
 		else:
 			return numer
 	def print_gotowe_prefiksy(self):
